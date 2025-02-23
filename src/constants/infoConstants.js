@@ -1,0 +1,14 @@
+export default{
+  bag: "Proizvodnja jedne plastične kese generiše oko 33 grama CO2. Ako vaš platneni ceger zamijeni 50 plastičnih kesa, uštedićete oko 1.650 grama CO2. To znači da samo uz pomoć jednog platnenog cegera, koji se koristi više puta, doprinosite smanjenju emisije CO2 i pomažete u očuvanju životne sredine. 🌱",
+  hygiene: "Ako, recimo, umjesto plastične četkice za zube koristite bambusovu četkicu, možete smanjiti emisiju CO2 za oko 10-15 grama po četkici. Svaki mali korak ka ekološki prihvatljivijim opcijama doprinosi očuvanju planete. 🌍",
+  cleaning: "Korišćenjem ekoloških sredstava za čišćenje u recikliranim ili biorazgradivim pakovanjima umjesto tradicionalnih plastičnih pakovanja možete smanjiti emisiju CO2, pa zamijenom 10 plastičnih pakovanja ekološkim možete uštediti 300-400 grama CO2. 🌍",
+  gardening: "Korišćenjem ekoloških proizvoda, poput biorazgradivih sredstava za prskanje i organskih đubriva, možete uštediti oko 150-200 grama CO2 po pakovanju, jer organski proizvodi zahtjevaju manje energije za proizvodnju i ne zagađuju okolinu kao hemijski proizvodi. 🌱🌍",
+  batteries: "Prelaskom na ekološke baterije, koje se lakše recikliraju i sadrže manje štetnih hemikalija, možete uštediti oko 20-30 grama CO2 po bateriji, jer za njihovu proizvodnju treba manje energije u poređenju sa standardnim baterijama. 🔋🌍",
+  fabric: "Korišćenjem tekstila od recikliranog najlona ili poliestera možete uštediti oko 30-40% CO2 u poređenju s proizvodnjom novih materijala. Na primjer, recikliranje 1 kg poliestera može smanjiti emisiju CO2 za otprilike 3-5 kilograma u odnosu na proizvodnju novih sintetičkih materijala. ♻️🌍",
+  box: "Korišćenjem ekološke ambalaže umjesto plastične možete uštediti oko 50-100 grama CO2 po pakovanju, jer proizvodnja biorazgradive i reciklirane ambalaže zahtijeva manje resursa i energije. ♻️🌍",
+  bulb: "Prelaskom na LED sijalice, možete uštediti oko 1.000 grama CO2 po sijalici godišnje, jer LED sijalice troše mnogo manje energije od tradicionalnih sijalica. 💡🌱",
+  scooter: "Korišćenjem električnog trotineta umesto automobila možete značajno smanjiti emisiju CO2, jer električni trotinet ne proizvodi emisije tokom vožnje, dok vožnja prosječnim automobilom može generisati oko 150-200 grama CO2 po kilometru. 🚗➡️🛴🌱",
+  secondHand: "Kupovinom second hand odjeće možete uštediti oko 1.000-2.000 grama CO2 po komadu odjeće, jer se smanjuje potreba za proizvodnjom novih materijala i transportom. 👚♻️",
+  bus: "Korišćenjem autobusa umesto privatnih automobila možete uštediti oko 150-200 grama CO2 po putniku na svakom putovanju, jer autobusi prevoze više ljudi i smanjuju ukupnu emisiju CO2 po osobi. 🚗➡️🚌🌍",
+  bike: "Korišćenjem bicikla umjesto automobila možete značajno smanjiti emisiju CO2, jer vožnja bicikla ne proizvodi emisije tokom vožnje, dok vožnja prosečnim automobilom može generisati oko 150-200 grama CO2 po kilometru. 🚗➡️🚲🌍",
+};

@@ -4,24 +4,33 @@ import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 const ProfileScreen = () => {
   // Dummy podaci
   const userName = 'Nikolina';
-  const userPoints = 150;
+  const userPoints = 4;
   const plants = [
-    { id: 1, name: 'P1', strikesRequired: 7, image: require('../images/dodatno/plants/p1.png') },
-    { id: 2, name: 'P2', strikesRequired: 14, image: require('../images/dodatno/plants/p2.png') },
-    { id: 3, name: 'P3', strikesRequired: 21, image: require('../images/dodatno/plants/p3.png') },
-    { id: 4, name: 'P4', strikesRequired: 28, image: require('../images/dodatno/plants/p4.png') },
-    { id: 5, name: 'P5', strikesRequired: 35, image: require('../images/dodatno/plants/p5.png') },
-    { id: 6, name: 'P6', strikesRequired: 42, image: require('../images/dodatno/plants/p6.png') },
+    { id: 1, name: 'P1', streakesRequired: 7, image: require('../images/dodatno/plants/p1.png') },
+    { id: 2, name: 'P2', streakesRequired: 14, image: require('../images/dodatno/plants/p2.png') },
+    { id: 3, name: 'P3', streakesRequired: 21, image: require('../images/dodatno/plants/p3.png') },
+    { id: 4, name: 'P4', streakesRequired: 28, image: require('../images/dodatno/plants/p4.png') },
+    { id: 5, name: 'P5', streakesRequired: 35, image: require('../images/dodatno/plants/p5.png') },
+    { id: 6, name: 'P6', streakesRequired: 42, image: require('../images/dodatno/plants/p6.png') },
+    { id: 7, name: 'P7', streakesRequired: 49, image: require('../images/dodatno/plants/p7.png') },
+    { id: 8, name: 'P8', streakesRequired: 56, image: require('../images/dodatno/plants/p8.png') },
+    { id: 9, name: 'P9', streakesRequired: 63, image: require('../images/dodatno/plants/p9.png') },
+    { id: 10, name: 'P10', streakesRequired: 70, image: require('../images/dodatno/plants/p10.png') },
+    { id: 11, name: 'P12', streakesRequired: 77, image: require('../images/dodatno/plants/p11.png') },
+    { id: 12, name: 'P12', streakesRequired: 84, image: require('../images/dodatno/plants/p12.png') },
+    { id: 13, name: 'P13', streakesRequired: 91, image: require('../images/dodatno/plants/p13.png') },
+    { id: 14, name: 'P14', streakesRequired: 98, image: require('../images/dodatno/plants/p14.png') },
+    { id: 15, name: 'P15', streakesRequired: 105, image: require('../images/dodatno/plants/p15.png') },
   ];
 
   return (
     <ScrollView style={styles.container}>
       {/* Header */}
       <View style={styles.header}>
-        <Image source={require('../images/dodatno/plants/p1.png')} style={styles.profileImage} />
+        <Image source={require('../images/dodatno/myprofile.png')} style={styles.profileImage} />
         <View style={styles.textContainer}>
           <Text style={styles.userName}>{userName}</Text>
-          <Text style={styles.points}>Poeni: {userPoints}</Text>
+          <Text style={styles.points}>Streak: {userPoints}</Text>
         </View>
       </View>
 
@@ -36,13 +45,17 @@ const ProfileScreen = () => {
         {plants.map((plant) => (
           <View key={plant.id} style={styles.plantCard}>
             <Image
+            source={require("../images/dodatno/lockImage.png")}
+            style={{height: 40, width: 20}}
+            />
+            <Image
               source={plant.image}
-              style={[styles.plantImage, { width: 80, height: 80 }]}
+              style={[styles.plantImage, { width: 70, height: 80}]}
               resizeMode="cover"
             />
             <View style={styles.plantText}>
               <Text style={styles.plantName}>{plant.name}</Text>
-              <Text style={styles.strikesRequired}>Treba {plant.strikesRequired} strikeova</Text>
+              <Text style={styles.streakesRequired}>Potreban streak: {plant.streakesRequired}</Text>
             </View>
           </View>
         ))}
@@ -54,7 +67,7 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7F7F7',
+    backgroundColor: '#E4EEE8',
     padding: 20,
   },
   header: {
@@ -81,7 +94,7 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 26,
-    fontFamily: 'Roboto', // You can replace with any custom font
+    fontFamily: 'Roboto', 
     fontWeight: 'bold',
     color: '#333',
   },
@@ -100,7 +113,7 @@ const styles = StyleSheet.create({
   },
   plantsTitle: {
     fontSize: 22,
-    fontFamily: 'Roboto', // You can replace with any custom font
+    fontFamily: 'Roboto',
     fontWeight: 'bold',
     color: '#333',
     marginBottom: 15,
@@ -109,6 +122,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+    marginBottom: 70
   },
   plantCard: {
     flexDirection: 'row',
@@ -120,24 +134,31 @@ const styles = StyleSheet.create({
     padding: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.5,
     shadowRadius: 5,
-    elevation: 3,
+    
+    
   },
   plantImage: {
     borderRadius: 10,
-    marginRight: 10,
+    marginRight: 10, 
+    
+    opacity: 0.4
+    
   },
   plantText: {
     flex: 1,
+    
+    opacity: 0.4
+    
   },
   plantName: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#333',
   },
-  strikesRequired: {
-    fontSize: 14,
+  streakesRequired: {
+    fontSize: 12,
     color: '#555',
   },
 });

@@ -45,7 +45,7 @@ export default function TabBarButton(props) {
         <item.type
           name={focused ? item.activeIcon : item.inactiveIcon}
           size={32}
-          color={focused ? '#9E673E' : '#7a7a7a'}
+          color={focused ? '#91AAAB' : '#B0BBB6'}
         />
       </Animatable.View>
     </TouchableOpacity>

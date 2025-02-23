@@ -7,14 +7,15 @@ import {
   Dimensions,
   TouchableOpacity,
   TextInput,
+  Modal,
 } from 'react-native';
 import React, {useState} from 'react';
 import FastImage from 'react-native-fast-image';
 import inputConstants from '../constants/inputConstants';
 import DigitsInput from 'react-native-digits-input';
 import DisabilityInput from '../components/DisabilityInput';
-import { Image } from 'react-native-animatable';
-
+import {Image} from 'react-native-animatable';
+import infoConstants from '../constants/infoConstants';
 
 const {width, height} = Dimensions.get('window');
 
@@ -25,24 +26,27 @@ export default function InputScreen({navigation, route}) {
   const [text, setText] = useState('');
   const [text2, setText2] = useState('');
 
+  
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const makeModal = isPressed => {
+    if (isPressed) {
+      setModalVisible(true);
+      setTimeout(() => setModalVisible(false), 6000);
+    }
+  };
+
+
   const [toastVisible, setToastVisible] = useState(false);
 
-  const makeToast = (isPressed) => {
-    if(isPressed){
-    setToastVisible(true);
-    setTimeout(() => setToastVisible(false), 3500); 
+  const makeToast = isPressed => {
+    if (isPressed) {
+      setToastVisible(true);
+      setTimeout(() => setToastVisible(false), 3500);
     }
   };
 
-  const [toastVisible2, setToastVisible2] = useState(false);
-
-  const makeToast2 = (isPressed) => {
-    if(isPressed){
-    setToastVisible2(true);
-    setTimeout(() => setToastVisible2(false), 3500); 
-    }
-  };
-
+  
   const handleTextChange = (inputText, order) => {
     console.log(order);
     if (order == 1) {
@@ -52,106 +56,126 @@ export default function InputScreen({navigation, route}) {
     }
   };
 
-
   return (
     <SafeAreaView
       style={
         (styles.container,
-        {paddingTop: backgroundImageHeight, backgroundColor: '#185241'})
+        {paddingTop: backgroundImageHeight, backgroundColor: '#99b9a9'})
       }>
       <Image
         source={require('../images/dodatno/ecoWallpaper.png')}
-        resizeMode='cover'
+        resizeMode="cover"
         style={
           (styles.background,
           {
-            height: 200,
-            width: '100%'
+            height: '18%',
+            width: '100%',
           })
         }
       />
 
       <View
         style={{
-          borderRadiusTopLeft: 20,
           borderTopEndRadius: 30,
           borderTopStartRadius: 30,
           overflow: 'hidden',
           maxWidth: '100%',
+          height: '82%',
           height: height - backgroundImageHeight,
         }}>
         <View
           style={{
-            paddingBottom: 20,
             flex: 1,
-            paddingTop: 25,
             backgroundColor: 'white',
-
             maxWidth: '100%',
             borderTopEndRadius: 30,
             borderTopStartRadius: 30,
           }}>
-          <View style={{height: '34%', maxWidth: '100%', alignItems: 'center'}}>
-          <View style={{height: '10%'}}/>
+          <View style={{height: '35%', maxWidth: '100%', alignItems: 'center'}}>
+            <View
+              style={{
+                minWidth: '100%',
+                alignItems: 'flex-end',
+                justifyContent: 'flex-end',
+                maxHeight: 50,
+              }}>
+              <TouchableOpacity onPress={() => makeModal(true)} style={{justifyContent: 'flex-end', alignItems: 'flex-end', marginRight: 15}}>
+                <Image
+                  source={require('../images/dodatno/infoIcon.png')}
+                  resizeMode="contain"
+                  style={{height: 40, width: 40}}
+                />
+              </TouchableOpacity>
+            </View>
+
+            <View style={{height: '8%'}} />
+            <Text
+              style={{
+                color: 'black',
+                fontFamily: 'Imprima-Regular',
+                textAlign: 'center',
+                fontSize: 18,
+                marginHorizontal: 14,
+              }}>
+              {inputConstants[route.params.id].input}
+            </Text>
+
+            {inputConstants[route.params.id].description != '' ? (
+              <Text
+                style={{color: 'blue', fontSize: 18}}
+                onPress={() =>
+                  navigation.navigate('ArticlesList', {
+                    text: inputConstants[route.params.id].description,
+                  })
+                }>
+                ovdje.
+              </Text>
+            ) : (
+              <></>
+            )}
+
+            <TextInput
+              keyboardType="number-pad"
+              value={text2}
+              onChangeText={inputText => handleTextChange(inputText, 2)}
+              textAlign="center"
+              maxLength={6}
+              style={{
+                fontSize: 18,
+                fontFamily: 'Imprima-Regular',
+                backgroundColor: '#E2E8E1',
+                overflow: 'hidden',
+                maxWidth: '70%',
+                width: '70%',
+                borderRadius: 10,
+                height: 60,
+                marginTop: 10,
+              }}
+            />
+
+            <TouchableOpacity
+              onPress={() => makeToast(true)}
+              style={{
+                width: '40%',
+                height: '20%',
+                backgroundColor: '#91AAAB',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginTop: 30,
+                borderRadius: 30,
+              }}>
               <Text
                 style={{
-                  color: 'black',
+                  color: 'white',
                   fontFamily: 'Imprima-Regular',
                   textAlign: 'center',
-                  fontSize: 18,
+                  fontSize: 20,
                 }}>
-                {inputConstants[route.params.id].input}
+                Potvrdi
               </Text>
-
-              {(inputConstants[route.params.id].description!="")?(
-              <Text style={{color: 'blue'}}
-              onPress={() => navigation.navigate("ArticlesList", {text: inputConstants[route.params.id].description}) }>
-              ovdje.
-              </Text>
-              ):(<></>)
-              }
-
-              <TextInput
-              keyboardType='number-pad'
-                value={text2}
-                onChangeText={inputText => handleTextChange(inputText, 2)}
-                textAlign="center"
-                maxLength={6}
-                style={{
-                  fontSize: 18,
-                  fontFamily: 'Imprima-Regular',
-                  backgroundColor: '#E2E8E1',
-                  overflow: 'hidden',
-                  maxWidth: '70%',
-                  width: '70%',
-                  borderRadius: 10,
-                  height: 60,
-                }}
-              />
-  
-              <TouchableOpacity
-              onPress={makeToast2}
-                style={{
-                  width: '40%',
-                  height: '20%',
-                  backgroundColor: '#91AAAB',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginTop: 30,
-                  borderRadius: 30,
-                }}>
-                <Text
-                  style={{
-                    color: 'white',
-                    fontFamily: 'Imprima-Regular',
-                    textAlign: 'center',
-                    fontSize: 20,
-                  }}>
-                  Potvrdi
-                </Text>
-              </TouchableOpacity>
+            </TouchableOpacity>
           </View>
-
+          <View style={{height: 50}} />
           <View
             style={{
               backgroundColor: '#E4EEE8',
@@ -159,16 +183,15 @@ export default function InputScreen({navigation, route}) {
               borderTopEndRadius: 30,
               borderTopStartRadius: 30,
               padding: 30,
-              minHeight: '48%',
-            }}
-            >
+              minHeight: '42%',
+            }}>
             <ScrollView style={[{flex: 1}]}>
               <Text
                 style={{
                   color: 'black',
                   fontFamily: 'Imprima-Regular',
                   fontSize: 20,
-                  textAlign: 'center'
+                  textAlign: 'center',
                 }}>
                 {inputConstants[route.params.id].text}
               </Text>
@@ -210,22 +233,43 @@ export default function InputScreen({navigation, route}) {
                   style={{width: width * 0.3, aspectRatio: 1}}
                 />
               </View>
-              <View style={[{height: 70}]}/>
+              <View style={[{height: 70}]} />
             </ScrollView>
           </View>
-        
         </View>
       </View>
+      
       {toastVisible && (
-        <View style={{ position: 'absolute', bottom: 100, alignItems: 'center', width: '100%'}}>
-          <Text style={{textAlign: 'center', fontSize:16, color: 'white', backgroundColor: '#c9c9c9', height: 20, borderRadius: 20, padding: 5, height: 50}}>Hvala Vam! Vaša recenzija je proslijeđena{'\n'}na moderaciju.</Text>
+        <View
+          style={{
+            position: 'absolute',
+            bottom: 200,
+            alignItems: 'center',
+            width: '100%',
+          }}>
+          <Text
+            style={{
+              textAlign: 'center',
+              textAlignVertical: 'center',
+              fontSize: 16,
+              color: 'white',
+              backgroundColor: '#c9c9c9',
+              height: 20,
+              borderRadius: 20,
+              padding: 5,
+              height: 50,
+            }}>
+            Čestitamo! Poeni će uskoro biti dodati.
+          </Text>
         </View>
       )}
-      {toastVisible2 && (
-        <View style={{ position: 'absolute', bottom: 100, alignItems: 'center', width: '100%'}}>
-          <Text style={{textAlign: 'center', fontSize:16, color: 'white', backgroundColor: '#c9c9c9', height: 20, borderRadius: 20, padding: 5, height: 50}}>Čestitamo! Poeni će uskoro biti dodati.</Text>
-        </View>
-      )}
+      <Modal transparent  visible={modalVisible} 
+      onRequestClose={() => setModalVisible(false)} >
+        <View style={{height: 240, width: 320, borderRadius: 15, backgroundColor: '#B0C378', position: 'absolute', top: 300, alignSelf: 'center', paddingTop: 18, paddingHorizontal: 10}}>
+            <Text style={{fontSize: 18, textAlign: 'center', color: '#000000'}}>{infoConstants[route.params.id]}</Text>
+            </View>
+          </Modal>
+        
     </SafeAreaView>
   );
 }

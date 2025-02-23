@@ -28,7 +28,7 @@ export default function HomeScreen({navigation}) {
           (styles.container,
           {height: height, backgroundColor: '#185241'})
         }>
-          <View style={[{width: '100%', maxHeight: '38%', }]}>
+          <View style={[{width: '100%', maxHeight: '35%', }]}>
         <Image
           source={require('../images/icons/ecoWallpaper.png')}
           resizeMode='cover'

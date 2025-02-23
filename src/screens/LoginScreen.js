@@ -1,20 +1,26 @@
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import React from 'react';
 import FastImage from 'react-native-fast-image';
+import { Image } from 'react-native-animatable';
+
 
 export default function LoginScreen({navigation}) {
   return (
-    <View style={{flex: 1, justifyContent: 'center'}}>
-      <FastImage
-        source={require('../images/dodatno/forestWallpaper.jpg')}
-        resizeMode={FastImage.resizeMode.cover}
-        style={{height: '100%'}}
-      />
+    <View style={{flex: 1, justifyContent: 'center', backgroundColor: '#ffffff'}}>
+      
+
+    <Image
+      source={require("../images/icons/appIconEco.png")}
+      resizeMode="cover"
+      style={{height: 150, width: 150, position: 'absolute', top: '6%',
+          alignSelf: 'center',}}
+    />
+
 
 <Text
         style={{
           position: 'absolute',
-          top: '15%',
+          top: '25%',
           color: '#91AAAB',
           fontFamily: 'Imprima-Regular',
           fontSize: 35,
@@ -24,13 +30,13 @@ export default function LoginScreen({navigation}) {
           padding: 10,
           borderRadius: 20,
         }}>
-        Carbon
+        EcoGuardians
       </Text>
 
       <Text
         style={{
           position: 'absolute',
-          top: '24%',
+          top: '32%',
           color: '#7a7a7a',
           fontFamily: 'Imprima-Regular',
           fontSize: 22,
@@ -46,7 +52,7 @@ export default function LoginScreen({navigation}) {
       <View
         style={{
           position: 'absolute',
-          top: '35%',
+          top: '40%',
           width: '80%',
           backgroundColor: 'white',
           padding: 30,

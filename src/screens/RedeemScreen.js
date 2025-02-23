@@ -50,8 +50,7 @@ export default function RedeemScreen() {
                 marginTop: 5,
                 fontFamily: 'Imprima-Regular',
               }}>
-              U saradnji sa našim partnerima pripremili smo razne pogodnosti za
-              naše odgovorne građane.
+              Naši partneri omogućili su Vam razne pogodnosti i nagrade.
             </Text>
           </View>
           <View
@@ -158,7 +157,7 @@ export default function RedeemScreen() {
                       30
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -214,7 +213,7 @@ export default function RedeemScreen() {
                       60
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -270,7 +269,7 @@ export default function RedeemScreen() {
                       75
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -371,7 +370,7 @@ export default function RedeemScreen() {
                       30
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -427,7 +426,7 @@ export default function RedeemScreen() {
                       30
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -483,7 +482,7 @@ export default function RedeemScreen() {
                       70
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -551,7 +550,7 @@ export default function RedeemScreen() {
                       60
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -607,7 +606,7 @@ export default function RedeemScreen() {
                       50
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -650,7 +649,7 @@ export default function RedeemScreen() {
               </Text>
               <View
                 style={{
-                  width: 220,
+                  width: 230,
                   height: 3,
                   marginTop: 18,
                   backgroundColor: '#222222',
@@ -715,7 +714,7 @@ export default function RedeemScreen() {
                       30
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -772,7 +771,7 @@ export default function RedeemScreen() {
                       20
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />
@@ -828,7 +827,7 @@ export default function RedeemScreen() {
                       15
                     </Text>
                     <FastImage
-                      source={require('../images/dodatno/coin.png')}
+                      source={require('../images/dodatno/carbonCoin.png')}
                       resizeMode={FastImage.resizeMode.contain}
                       style={{width: width * 0.08, aspectRatio: 1}}
                     />

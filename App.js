@@ -15,7 +15,7 @@ import RedeemScreen from './src/screens/RedeemScreen';
 import {LogBox} from 'react-native';
 import ArticlesList from './src/screens/ArticlesList';
 
-LogBox.ignoreAllLogs(); //Ignore all log notifications
+
 
 export default function App() {
   const Stack = createStackNavigator();
